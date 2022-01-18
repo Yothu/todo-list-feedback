@@ -139,6 +139,17 @@ enterButton.addEventListener('click', () => {
   document.getElementById('taskForm').value = '';
 });
 
+const inputTaskForm = document.getElementById('taskForm');
+inputTaskForm.addEventListener('keypress', (press) => {
+  if (press.key === 'Enter') {
+    console.log('AAAAAAAAAA');
+    const newDescription = document.getElementById('taskForm').value;
+    const newTask = addTask(newDescription, tasksContainer);
+    createTaskHTML(newTask.description);
+    document.getElementById('taskForm').value = '';  
+  }
+});
+
 clearButton.addEventListener('click', () => {
   const checkBoxes = document.querySelectorAll('.statusBox');
   tasksContainer = deleteCompletedTasks(checkBoxes, tasksContainer);
