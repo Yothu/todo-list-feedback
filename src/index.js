@@ -142,7 +142,6 @@ enterButton.addEventListener('click', () => {
 const inputTaskForm = document.getElementById('taskForm');
 inputTaskForm.addEventListener('keypress', (press) => {
   if (press.key === 'Enter') {
-    console.log('AAAAAAAAAA');
     const newDescription = document.getElementById('taskForm').value;
     const newTask = addTask(newDescription, tasksContainer);
     createTaskHTML(newTask.description);
